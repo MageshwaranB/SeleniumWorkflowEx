@@ -2,11 +2,12 @@ name: Nightly Selenium test with Maven
 
 on:
   schedule:
-    - cron: '50 15 * * 1-5'
+    - cron: '55 15 * * 1-5'
   push:
     branches:
       - main
-
+  pull_request:
+      types: [ opened, synchronize, reopened, closed ]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
